@@ -21,7 +21,7 @@ def login():
     flash('REGISTRO CORRECTO')
     return render_template('login.html')
 
-@app.route('/index')
+@app.route('/index', methods=['GET', 'POST'])
 
 def index():
     conn = sql.connect('hospital.db')
