@@ -14,7 +14,14 @@ db.init_app(app)
 
 app.secret_key = 'mysecretkey'
 
-@app.route('/')
+
+
+@app.route('/', methods=['GET', 'POST'])
+def login():
+    flash('REGISTRO CORRECTO')
+    return render_template('login.html')
+
+@app.route('/index')
 
 def index():
     conn = sql.connect('hospital.db')
