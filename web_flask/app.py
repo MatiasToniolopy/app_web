@@ -1,4 +1,4 @@
-import re
+
 from flask import Flask, request, render_template, redirect, url_for, flash
 import traceback
 from models import db, Persona
@@ -39,7 +39,7 @@ def agregarpaciente():
            nuevo_paciente = Persona(nombre, int(edad), int(dni), int(habitacion), diagnostico)
            db.session.add(nuevo_paciente)
            db.session.commit()
-           flash('Paciente agrgado satisfactoriamente')
+           flash('Paciente agregado satisfactoriamente')
            return redirect(url_for('index'))
            #return jsonify (nuevo_paciente.convert())
         except:
